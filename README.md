@@ -17,7 +17,7 @@ Below are some basic requirements that should be implemented in your submission:
 
 **Note:** You are free to use any CSS framework or library to help you build the UI (user interface). Also, you can add any other functionality you feel is necessary, but avoid adding complicated functionalities.
 
-##Also make sure your design follows the design here
+## Also make sure your design follows the design here
 `https://www.figma.com/file/RVoYFFXnMHbCjha4TrzhDf/INVENTORS?type=design&node-id=717%3A799&t=LmwEPWqtkYDUIj4J-1`
 
 ## API Documentation
