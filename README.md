@@ -38,4 +38,6 @@ The response body is a JSON object that contains the following fields:
 
 ## Submission Instructions
 
-To submit your solution, please create a GitHub repository with your code and any necessary instructions to run your solution locally. Ensure to include a `README.md` file that explains how to run your solution and any additional notes you think are important. Once you have created your repository, please drop the link, along with your full name in this Google form.
+To submit your solution, please fork this repository and add your solution and any necessary instructions to run your solution locally sould be added to a separate `SOLUTIONREADME.md` add any additional notes you think are important. Once you have created your repository then create a Pull Request to this repository.
+
+Remember to add your full name and the email you used in registrying to your readme.
