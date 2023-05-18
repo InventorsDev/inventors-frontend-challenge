@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
+.rectangle22{
+    position: relative;
+    padding: 20px;
+    background: linear-gradient(180deg, #0C1516 12.68%, rgba(12, 21, 22, 0.899768) 32.44%, rgba(12, 21, 22, 0.796534) 52.19%, rgba(12, 21, 22, 0.484071) 74.2%, rgba(12, 21, 22, 0.183844) 86.95%, rgba(12, 21, 22, 0) 100%);
+}
+
+.header{
+    position: absolute;
+    top: 30px;
+    left: 10%;
+    right: 10%;
+    width: 80%;
+}
+
+.logoname{
+    display: inline !important;
+    width: fit-content;
+}
+.logo{
+    width: 36px !important;
+    height: 36px !important;
+}
+
+.inventors{
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    color: #FFFFFF;
+    vertical-align: top;
+}
+
+.link-contain{
+    margin-left: 200px;
+    color: black;
+    align-self: center;
+}
+
+.links {
+    padding: 0px 20px 0px 20px;
+}
+
+.links:active {
+    color: #FFFFFF;
+}
+
+.searcher{
+    padding: 6px 15px 6px 6px;
+    border-radius: 28px;
+    background: rgba(255, 255, 255, 0.2);
+    margin-left: 150px;
+}
+
+.search{
+    background-color: inherit;
+    border: none;
+    background: none;
+}
+
+.search:nth-child(2) {
+    vertical-align: calc(2px);
+    width: 75px;
+}
+
+.user{
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    top: 10px;
+    right: 30px;
+}

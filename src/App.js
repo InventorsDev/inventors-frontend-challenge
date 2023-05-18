@@ -1,25 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
+import './Components/Navigation bar/Nav.css';
+import Nav from './Components/Navigation bar/Nav';
+import { useEffect, useState } from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
 
+function App () {
+    const [data, setData] = useState(null);
+    const api_key = '1ee185c3dac0558dc216d87405e84a0f';
+    let [page, setPage] = useState(1);
+    useEffect(
+       ()=>{
+        fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${api_key}&page=${page}`)
+        .then(response => response.json())
+        .then (data => {
+          setData(data)
+        }
+       )
+        .catch(
+          error => console.error('Error:', error)
+        )
+       }, []
+    )
+    console.log(data);
+    // const specific = data ? data.page : null
+    
+    return (
+       <div className="landingPage">
+         <Nav />
+       </div>
+    )
+    }
 export default App;
