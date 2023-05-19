@@ -1,6 +1,7 @@
-import logo from '../../Assets/Images/Frame.svg';
+import './Nav.css';
+import logo from '../../Assets/Images/Logo.svg';
 import search from '../../Assets/Images/Search.svg';
-import user from '../../Assets/Images/Frame 90.png';
+import user from '../../Assets/Images/User.png';
 
 function Nav () {
     
