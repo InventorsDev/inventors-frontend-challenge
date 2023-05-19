@@ -1,21 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
 
-.rectangle22{
+.navSection{
     position: relative;
     padding: 20px;
     background: linear-gradient(180deg, #0C1516 12.68%, rgba(12, 21, 22, 0.899768) 32.44%, rgba(12, 21, 22, 0.796534) 52.19%, rgba(12, 21, 22, 0.484071) 74.2%, rgba(12, 21, 22, 0.183844) 86.95%, rgba(12, 21, 22, 0) 100%);
 }
 
 .header{
-    position: absolute;
-    top: 30px;
-    left: 10%;
-    right: 10%;
+    position: relative;
+    margin-left: 10%;
     width: 80%;
 }
 
 .logoname{
     display: inline !important;
+    position: absolute;
+    left: 20px;
     width: fit-content;
 }
 .logo{
@@ -27,30 +27,37 @@
     font-family: 'Ubuntu';
     font-style: normal;
     font-weight: 700;
-    font-size: 30px;
+    font-size: 25px;
     color: #FFFFFF;
     vertical-align: top;
+    padding: 5px 0px 0px 15px;
 }
 
 .link-contain{
-    margin-left: 200px;
-    color: black;
-    align-self: center;
+    display: inline-block;
+    position: absolute;
+    width: 40%;
+    color: #ffffff75;
+    left: 30%;
+    top: 8px;
+    font-weight: 50;
 }
 
 .links {
     padding: 0px 20px 0px 20px;
 }
 
-.links:active {
-    color: #FFFFFF;
-}
 
+.searchuser{
+    position: absolute;
+    right: 20px;
+    top: 10px;
+}
 .searcher{
-    padding: 6px 15px 6px 6px;
+    display: inline;
+    padding: 10px 15px 10px 10px;
     border-radius: 28px;
     background: rgba(255, 255, 255, 0.2);
-    margin-left: 150px;
 }
 
 .search{
@@ -64,10 +71,13 @@
     width: 75px;
 }
 
+.user-contain{
+    display: inline;
+}
 .user{
     position: absolute;
+    margin-left: 10px;
+    top: -10px;
     width: 36px;
     height: 36px;
-    top: 10px;
-    right: 30px;
 }

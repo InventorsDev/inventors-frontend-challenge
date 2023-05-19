@@ -1,11 +1,12 @@
 import logo from '../../Assets/Images/Frame.svg';
+import search from '../../Assets/Images/Search.svg';
 import user from '../../Assets/Images/Frame 90.png';
 
 function Nav () {
     
 
     return (
-         <header className="rectangle22">
+         <header className="navSection">
            <section className="header">
 
             <div className='logoname'>
@@ -13,19 +14,23 @@ function Nav () {
              <span className='inventors'>Inventors</span>
             </div> 
 
-            <span className='link-contain'>
+            <div className='link-contain'>
               <a className='links' >Home</a>
               <a className='links' >Discover</a>
               <a className='links' >WatchList</a>
               <a className='links' >LiveTv</a>
-            </span>
+            </div>
 
-            <span className='searcher'>
-              <button type='submit'  className='search'><i className="fas fa-search"></i></button>
+            <div className='searchuser'>
+             <div className='searcher'>
+              <button type='submit'  className='search'><img src={search} /></button>
               <input type='text' placeholder='search'  className='search'/>
-            </span>
-            <img src={user} className='user'/>
-      
+             </div>
+
+             <div className='user-contain'>
+              <img src={user} className='user'/>
+             </div>
+            </div>
            </section>
          </header>
     )
