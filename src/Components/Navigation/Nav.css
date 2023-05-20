@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+@import url('https://fonts.cdnfonts.com/css/satoshi');
 
+                
 .navSection{
     position: relative;
     padding: 20px;
-    background: linear-gradient(180deg, #0C1516 12.68%, rgba(12, 21, 22, 0.899768) 32.44%, rgba(12, 21, 22, 0.796534) 52.19%, rgba(12, 21, 22, 0.484071) 74.2%, rgba(12, 21, 22, 0.183844) 86.95%, rgba(12, 21, 22, 0) 100%);
 }
 
 .header{

@@ -1,0 +1,21 @@
+.body{
+   position: relative;
+   padding: 20px;
+}
+
+.allprops{
+    position: relative;
+    margin-left: 10%;
+    width: 80%;
+}
+
+.h1{
+    color: #ffffff;
+    font-size: 3em;
+}
+
+.props{
+    position: absolute;
+    top: 30px;
+    width: 50%;
+}

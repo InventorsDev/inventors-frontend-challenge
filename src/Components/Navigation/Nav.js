@@ -11,25 +11,25 @@ function Nav () {
            <section className="header">
 
             <div className='logoname'>
-             <img src={logo} className='logo'/>
+             <img src={logo} className='logo' alt=''/>
              <span className='inventors'>Inventors</span>
             </div> 
 
             <div className='link-contain'>
-              <a className='links' >Home</a>
-              <a className='links' >Discover</a>
-              <a className='links' >WatchList</a>
-              <a className='links' >LiveTv</a>
+              <span className='links' >Home</span>
+              <span className='links' >Discover</span>
+              <span className='links' >WatchList</span>
+              <span className='links' >LiveTv</span>
             </div>
 
             <div className='searchuser'>
              <div className='searcher'>
-              <button type='submit'  className='search'><img src={search} /></button>
+              <button type='submit'  className='search'><img src={search}  alt=''/></button>
               <input type='text' placeholder='search'  className='search'/>
              </div>
 
              <div className='user-contain'>
-              <img src={user} className='user'/>
+              <img src={user} className='user' alt=''/>
              </div>
             </div>
            </section>
