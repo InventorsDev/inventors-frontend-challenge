@@ -1,16 +1,21 @@
 import './Body.css';
+import play from '../../Assets/Images/Play.svg'
 
 function Body (props) {
-    
     return (
         <div className="body">
+
          <div className='allprops'>
+
            <div className='props'>
              <h1 className='h1'>{props.title}</h1>
-             <span>{props.year}</span>
-             <p>{props.overview}</p>
+             <p className='year'>{props.year}</p>
+             <button className='button'><img src={play} alt='' className='play'/>Play</button>
+             <p className='overview'>{props.overview}</p>
            </div>
+
          </div>  
+
         </div>
     );
 }

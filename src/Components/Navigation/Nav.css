@@ -42,10 +42,15 @@
     left: 30%;
     top: 8px;
     font-weight: 50;
+    font-family: 'Satoshi', sans-serif;
 }
 
 .links {
     padding: 0px 20px 0px 20px;
+}
+
+.links:nth-child(1) {
+    color:#FFFFFF;
 }
 
 
