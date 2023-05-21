@@ -21,10 +21,10 @@
 }
 
 .button{
-    display: block;
+    display: inline;
     margin-top: 20px;
-    width: 100px;
-    height: 40px;
+    width: 120px;
+    height: 50px;
     border:  none;
     border-radius: 28px;
 }
@@ -42,4 +42,10 @@
 .year{
     color: #ffffff;
     font-weight: 50;
+}
+
+.tick{
+    position: absolute;
+    top: 185px;
+    padding-left: 10px;
 }
