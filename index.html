@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- font awsome cdn link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+  <!-- custom style link -->
+  <link rel="stylesheet" href="app.css" />
+
+
+  <!-- swiper cdn link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+
+  <title> Movie App </title>
+</head>
+
+<body>
+  <div class="landing_page">
+    <section class="header">
+      <div class="navbar_section">
+        <div class="logo">
+          <i></i>
+          <p>Inventors</p>
+        </div>
+
+        <ul>
+          <li> <a> Home </a> </li>
+          <li> <a> Discover </a> </li>
+          <li> <a> Watchlist </a> </li>
+          <li> <a> Live TV </a> </li>
+        </ul>
+
+        <div class="search_profile">
+          <div class="search_div">
+            <i class="fa fa-magnifying-glass"></i>
+            <input type="text" id="search" name="search" placeholder="search" />
+          </div>
+          <img src="./images/Frame 90.png" />
+        </div>
+      </div>
+
+      <!-- HERO SECION -->
+      <div class="hero_section">
+        <div class="right_hero">
+          <img src="./images/scream.png" alt="title" />
+          <div class="hero_play_div">
+            <p class="hero_play"><i class="fa fa-play"></i> play</p>
+            <p class="paly_plus_icon"><i class="fa fa-plus"></i> </p>
+          </div>
+          <p class="hero_text">In the next installment, the survivors of the Ghostface killings leave Woodsboro behind
+            and start a fresh
+            chapter in New York City.</p>
+          <p class="hero_text2">Horror, Mystery, Thriller</p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- TRENDING SECTION -->
+    <section class="trending_section">
+      <div class="trending_top">
+        <p class="top_text">Trending</p>
+        <div class="view_all">
+          <a href="#">view all</a>
+          <div class="next_icons">
+            <p class="left_nextIcon"> <i class="fa fa-chevron-left"></i> </p>
+            <p class="right_nextIcon"> <i class="fa fa-chevron-right"></i> </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="movie_cards">
+      </div>
+    </section>
+
+    <!-- SERIES SECTION -->
+    <section class="trending_section">
+      <div class="trending_top">
+        <p class="top_text">Binge-worthy series</p>
+        <div>
+          <a href="#" id="view_all">view all</a>
+          <div class="next_icons">
+            <p class="left_nextIcon"> <i class="fa fa-chevron-left"></i> </p>
+            <p class="right_nextIcon"> <i class="fa fa-chevron-right"></i> </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="movie_cards_series">
+        <div class="movie_card_series">
+          <img src="./images/bg_img.png" />
+          <div class="card_details">
+            <p class="card_titile">Bridgeton <span>2020</span></p>
+            <p class="card_space">25.26 EP<span></span>3.86 GB</p>
+            <p class="card_text">Ghost follows Tariq navigating his new life, in which his desire to shed his father's
+              legacy comes up
+              against the mounting pressure to save his family.</p>
+            <div class="hero_play_div">
+              <p class="hero_play"><i class="fa fa-play"></i> play</p>
+              <p class="paly_plus_icon"><i class="fa fa-arrow-down"></i> </p>
+            </div>
+          </div>
+        </div>
+
+        
+
+      </div>
+
+    </section>
+    <!-- modal -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 id="modal-title"></h2>
+        <p><strong>Rating:</strong> <span id="modal-rating"></span></p>
+        <p><strong>Runtime:</strong> <span id="modal-runtime"></span></p>
+        <p><strong>Genre:</strong> <span id="modal-genre"></span></p>
+      </div>
+    </div>
+    
+  </div>
+
+
+  <script src="app.js"></script>
+</body>
+
+</html>
