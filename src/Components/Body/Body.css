@@ -20,6 +20,10 @@
     width: 40%;
 }
 
+.enclose{
+    position: relative;
+}
+
 .button{
     display: inline;
     margin-top: 20px;
@@ -29,9 +33,22 @@
     border-radius: 28px;
 }
 
-.play{
+.pause{
     position: absolute;
     left: 18px;
+}
+
+.tick{
+    display: inline;
+    margin-top: 20px;
+    text-align: center;
+    margin-left: 10px;
+    border: none;
+    position: absolute;
+    height: 48px;
+    width: 48px;
+    border-radius: 24px;
+    background-color: #00000025;
 }
 
 .overview{
@@ -42,10 +59,4 @@
 .year{
     color: #ffffff;
     font-weight: 50;
-}
-
-.tick{
-    position: absolute;
-    top: 185px;
-    padding-left: 10px;
 }
