@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.arrow{
+    animation:  arrow  ease infinite .8s;
+    /* box-shadow: 2px 1px 52px   rgb(89, 255, 0) ; */
+    text-shadow: 2px 1px 52px   rgb(89, 255, 0) ;
+}
+@keyframes arrow{
+    0%{
+        padding: 0.75px;
+    }
+    50%{
+        padding: 4.75px;
+    }
+    70%{
+        padding: 5.75px;
+    }
+    100%{
+        padding: 0.75px;
+    }
+}
+
+
+/* Set the root container to full height */
+html, body, #root {
+    height: 100vh;
+  }
+  
+  /* Enable scrolling with a fixed thumb height */
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+/* ::-webkit-scrollbar-thumb{
+
+}
+   */
+  ::-webkit-scrollbar-thumb {
+    background-color: #110000;
+    border-radius: 400px;
+    width: 10em;
+  }
+
+  /* Add a class to enable infinite scrolling */
+  .infinite-scrolling {
+    overflow-y: scroll;
+  }
