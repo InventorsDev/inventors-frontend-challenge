@@ -1,34 +1,38 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Movie App
 
-## Getting Started
+This is a Movie App project that displays a list of movies fetched from an external API.
 
-First, run the development server:
+## Project Status
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+The project is a work in progress. It is not fully completed, but due to time constraints, I am submitting what has been done so far. I will continue working on it to make further updates and improvements.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Author
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Full Name: Omotola Tomi
+- Email: omotolatomi01@gmail.com
+- Discord: Ayomide#5125
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## About the Project
 
-## Learn More
+The Movie App displays a list of movies obtained from an external API. The data, such as movie titles, release dates, and overviews, is fetched dynamically from the API.
 
-To learn more about Next.js, take a look at the following resources:
+### Main Poster for Scream
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The main poster for the movie "Scream" is static and different from the rest of the posters. I chose this design because I felt the background color suited it well, and since there was no specific requirement for what the main poster should be, I decided to leave it as part of the overall design.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Installation and Usage
 
-## Deploy on Vercel
+To run the Movie App locally:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Clone the repository.
+2. Install the dependencies by running `npm install`.
+3. Start the development server with `npm run dev`.
+4. Access the app in your browser at `http://localhost:3000`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Credits
+
+The Movie App project is based on the Next.js framework and uses Tailwind CSS for styling. It also makes use of the API provided by [The Movie Database (TMDb)](https://www.themoviedb.org/) to fetch movie data.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
