@@ -1,0 +1,120 @@
+
+
+body{
+        padding: 0px;
+        margin: 0px;
+        outline: none;
+        background-color: black;
+}
+header{
+    background-image: url(./asset/img/section_img.png);
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.logo-links{
+    position: relative;
+    height: 65vh;
+    width: 100%;
+    padding: 20px  0 ;
+    display: flex;
+    justify-content: space-between;
+
+}
+.logo-links .logo{
+    padding: 10px 2%;
+    width: 100px;
+    height: 25px;
+}
+.links ul{
+    display: flex;
+}
+.links ul li{
+    list-style: none;
+    margin-left: 30px;
+}
+.links ul li a{
+    text-decoration: none;
+    color: darkgray;
+}
+.links ul li a:hover{
+    color: white;
+}
+.links ul li a:current{
+    color: white;
+}
+.logo-links  .search-bar{
+    display: flex;
+    padding: 10px; 
+
+}
+form input{
+    padding: 3px  10px;
+    border: none;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    height: 21px;
+    color: white;
+}
+form input::placeholder{
+    color: white;
+}
+form .profile-photo{
+    width: 30px;
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    margin-left: 10px;
+}
+.hero{
+    position: relative;
+    bottom: 300px;
+    padding: 30px;
+    width: 300px;
+
+}
+.hero {
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.design{
+    background-color: red;
+    padding: 5px;
+    align-content: center;
+}
+.hero .rating{
+    color: gold;
+}
+.hero .genre{
+    color: grey;
+}
+.hero .genre span{
+    padding: 0px 10px;
+}
+.hero .button{
+    position: relative;
+    top: 10px;
+}
+.hero button:hover{
+    background-color: grey;
+}
+.hero button{
+    padding: 5px 10px;
+    color: white;
+    background-color: red;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 500;
+}
+.hero button .fa-play{
+    padding: 0 5px;
+}
+.hero button .watchlist{
+    border-radius: 50%;
+}
+.hero p{
+    font-size: 10px;
+    margin-top: 15px;
+}
