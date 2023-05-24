@@ -1,46 +1,38 @@
-# inventors-frontend-challenge# Inventors Frontend Challenge
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Challenge Description
+## Getting Started
 
-You are tasked with building a web page that displays a list of movies from an external API. The API endpoint is `https://api.themoviedb.org/3/movie/popular`, which returns a list of popular movies. Your task is to create a frontend that consumes this API and displays the movies in a visually appealing way.
+First, run the development server:
 
-## Requirements
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+```
 
-Below are some basic requirements that should be implemented in your submission:
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-- Your frontend should be built using HTML, CSS, and JavaScript.
-- The web page should display a list of movies, including the movie poster, title, release date, and overview.
-- The list should be sortable by release date or popularity.
-- The web page should have a search bar that allows users to search for movies by title.
-- When a user clicks on a movie, it should display a modal that shows additional details, such as the movie's rating, runtime, and genre.
-- Your frontend should be responsive and work on desktop and mobile devices.
+You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-**Note:** You are free to use any CSS framework or library to help you build the UI (user interface). Also, you can add any other functionality you feel is necessary, but avoid adding complicated functionalities.
+[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
 
-## Also make sure your design follows the design here
-`https://www.figma.com/file/RVoYFFXnMHbCjha4TrzhDf/INVENTORS?type=design&node-id=717%3A799&t=LmwEPWqtkYDUIj4J-1`
+The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-## API Documentation
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-The API endpoint is `https://api.themoviedb.org/3/movie/popular`. It accepts the following query parameters:
+## Learn More
 
-- `api_key`: Your API key, which you can obtain by creating an account at `https://www.themoviedb.org/`.
-- `language`: The language of the response. Defaults to "en-US".
-- `page`: The page of results to return. Defaults to 1.
+To learn more about Next.js, take a look at the following resources:
 
-The response body is a JSON object that contains the following fields:
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-- `page`: The page of results returned.
-- `total_results`: The total number of results available.
-- `total_pages`: The total number of pages available.
-- `results`: An array of movie objects. Each movie object contains the following fields:
-  - `poster_path`: The path to the movie's poster image.
-  - `title`: The movie's title.
-  - `release_date`: The movie's release date.
-  - `overview`: A brief summary of the movie's plot.
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Submission Instructions
+## Deploy on Vercel
 
-To submit your solution, please fork this repository and add your solution and any necessary instructions to run your solution locally sould be added to a separate `SOLUTIONREADME.md` add any additional notes you think are important. Once you have created your repository then create a Pull Request to this repository.
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Remember to add your full name and the email you used in registrying to your readme.
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
