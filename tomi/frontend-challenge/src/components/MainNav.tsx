@@ -11,7 +11,7 @@ interface ISearchProps {
 
 const MainNav = (props: ISearchProps) => {
   return (
-    <div className=" flex items-center px-4 justify-between py-12 z-40 bg-gradient-to-b from-[#0c1516] from-50% fixed top-0 w-full">
+    <div className=" flex items-center px-16 justify-between py-12 z-40 bg-gradient-to-b from-[#0c1516] from-50% fixed top-0 w-full">
       <img src="/logo.svg" alt="logo" />
       <Navbar />
       <div className="flex gap-3 items-center justify-center">

@@ -1,6 +1,9 @@
+"use client";
+
 import { Movie } from "@/types";
 import Image from "next/image";
-import React, { Dispatch, SetStateAction } from "react";
+import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
+import GenreTag from "./GenreTag";
 
 interface IModalProp {
   showModal: boolean;
@@ -8,14 +11,34 @@ interface IModalProp {
   movieDet: Movie;
 }
 
+type MovieGenre = {
+  id: number;
+  name: string;
+};
+
 const MovieModal = (modal: IModalProp) => {
+  const [movieGenres, setMovieGenres] = useState<MovieGenre[]>([]);
+
+  useEffect(() => {
+    fetchMovieGenres();
+  }, []);
+
+  async function fetchMovieGenres() {
+    const response = await fetch(
+      `https://api.themoviedb.org/3/movie/${modal.movieDet.id}?api_key=337276aee7bc33e091493ae6b6aabb77`
+    );
+    const data = await response.json();
+    const genres = data.genres;
+    setMovieGenres(genres);
+  }
+
   if (!modal.showModal) {
     return null;
   }
 
   return (
     <div
-      className=" fixed inset-0 bg-[rgba(0,0,0,0.5)] grid place-items-center overscroll-none z-50"
+      className=" fixed inset-0 bg-[rgba(0,0,0,0.5)] grid place-items-center overscroll-none z-40"
       onClick={() => modal.setShowModal(false)}
     >
       <div
@@ -41,6 +64,11 @@ const MovieModal = (modal: IModalProp) => {
             {modal.movieDet && modal.movieDet.title}
           </p>
           <div>
+            <div className=" flex gap-2 mb-4">
+              {movieGenres.map((genre) => (
+                <GenreTag name={genre.name} key={genre.id}></GenreTag>
+              ))}
+            </div>
             <p className=" text-[#fff] opacity-50 text-sm">
               Release date - {modal.movieDet && modal.movieDet.release_date}
             </p>
@@ -48,9 +76,16 @@ const MovieModal = (modal: IModalProp) => {
               Rating - {modal.movieDet && modal.movieDet.vote_average} out of 10
             </p>
           </div>
-          <p className=" font-light opacity-90">{modal.movieDet && modal.movieDet.overview}</p>
+          <p className=" font-light opacity-90">
+            {modal.movieDet && modal.movieDet.overview}
+          </p>
         </div>
-        <button className=" fixed bottom-2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-1/3 bg-white py-3 rounded-2xl text-black hover:bg-slate-300 " onClick={() => modal.setShowModal(false)}>Close</button>
+        <button
+          className=" absolute top-0 right-0 w-8 h-8 transform grid place-items-center z-50 bg-slate-100 rounded-full text-black hover:bg-slate-100 border border-slate-800 transition-all duration-300"
+          onClick={() => modal.setShowModal(false)}
+        >
+          <img src="/close.svg" alt="" />
+        </button>
       </div>
     </div>
   );
