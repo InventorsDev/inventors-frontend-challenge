@@ -5,12 +5,14 @@
 .navSection{
     position: relative;
     padding: 20px;
+    height: 50px;
 }
 
 .header{
     position: relative;
     margin-left: 10%;
     width: 80%;
+    height: 40px;
 }
 
 .logoname{

@@ -1,32 +1,53 @@
 .body{
    position: relative;
    padding: 20px;
+   height: fit-content;
 }
 
 .allprops{
+    display: block;
     position: relative;
     margin-left: 10%;
+    height: fit-content;
     width: 80%;
 }
 
-.h1{
+.buttons{
+    display: block;
+}
+.pageButtons{
+    display: inline;
+    border: none;
+    background-color: transparent;
+}
+
+.page{
     color: #ffffff;
+    font-size: 20px;
+    padding: 0px 20px 0px 20px;
 }
 
 .props{
-    position: absolute;
-    top: 100px;
-    height: 360px;
+    display: block;
     width: 40%;
+}
+
+.heading{
+    color: #ffffff;
+}
+
+.year{
+    color: #ffffff;
+    font-weight: 50;
 }
 
 .enclose{
     position: relative;
+    padding: 20px 0px 20px 0px;
 }
 
 .button{
     display: inline;
-    margin-top: 20px;
     width: 120px;
     height: 50px;
     border:  none;
@@ -40,7 +61,6 @@
 
 .tick{
     display: inline;
-    margin-top: 20px;
     text-align: center;
     margin-left: 10px;
     border: none;
@@ -56,7 +76,7 @@
     font-weight: 50;
 }
 
-.year{
-    color: #ffffff;
-    font-weight: 50;
+.post{
+    width: 256px;
+    height: 304px;
 }

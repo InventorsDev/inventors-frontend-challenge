@@ -32,6 +32,7 @@ function Nav () {
               <img src={user} className='user' alt=''/>
              </div>
             </div>
+            
            </section>
          </header>
     )

@@ -1,0 +1,57 @@
+@import url('https://fonts.cdnfonts.com/css/satoshi');
+ .moviesc{
+    position: relative;
+    padding: 20px;
+    scroll-behavior: smooth;
+ }
+
+ .allMovies{
+    position: relative;
+    margin-left: 10%;
+    width: 80%;
+}
+
+.movies{
+   display: block;
+   color: #ffffff;
+}
+
+.topman{
+    display: block;
+    position: relative;
+    height: 80px;
+}
+
+.trend{
+    position: absolute;
+    left: 0px;
+}
+
+.right{
+    position: absolute;
+    right: 0px;
+    top: 20px;
+    height: 40px;
+}
+
+.view{
+    color: #FFA900;
+    font-family: 'Satoshi', sans-serif;
+    text-decoration: underline;
+}
+
+.nbsp{
+    font-size: 2em;
+    font-weight: 50;
+}
+.scrollButtons{
+    background-color: transparent;
+    height: 36px;
+    width: 36px;
+    border-radius: 18px;
+    border: solid 1px white;
+}
+.post{
+    width: 256px;
+    height: 304px;
+}
