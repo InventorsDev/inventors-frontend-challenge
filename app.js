@@ -2,14 +2,13 @@ const apiURL = 'https://api.themoviedb.org/3/movie/popular?api_key=2969cb5dab804
 const imgURL = "https://image.tmdb.org/t/p/w1280/"
 const trendingUrl = 'https://api.themoviedb.org/3/trending/movie/day?api_key=2969cb5dab804fa038e6147c4bca25d4';
 const seriesUrl = 'https://api.themoviedb.org/3/tv/popular?api_key=2969cb5dab804fa038e6147c4bca25d4';
+searchAPI =  'https://api.themoviedb.org/3/search/movie?api_key=2969cb5dab804fa038e6147c4bca25d4'
 
 const search = document.getElementById('search');
 const form = document.getElementById('form');
-const main = document.getElementById('main');
 
 const movie_cards = document.getElementsByClassName('movie_cards')[0];
 const movie_cards_series = document.getElementsByClassName('movie_cards_series')[0];
-
 
 
 viewAllLink = document.querySelector('.trending_top a');
@@ -17,56 +16,87 @@ viewAllSeries = document.getElementById('view_all')
 
 // Variable to store the initial 5 movies
 let initialMovies = [];
-
+let initialSeries = [];
+// Sort variables
+let isSortOptionsVisible = false;
 //left and right sliding
 const movieContainer = document.querySelector('.movie_cards');
 const prevButton = document.querySelector('.left_nextIcon');
 const nextButton = document.querySelector('.right_nextIcon');
+const prevSeriesButton = document.querySelector('.prev_Icon');
+const nextSeriesButton = document.querySelector('.next_Icon');
 
 let movieIndex = 0;
+let seriesIndex = 0;
 //add event listeners to next and prev buttons
+prevSeriesButton.addEventListener('click', () => {
+    seriesIndex = Math.max(seriesIndex - 1, 0)
+    showSeries(initialSeries, movie_cards_series)
+    console.log('prev series button')
+})
 prevButton.addEventListener('click', () => {
     movieIndex = Math.max(movieIndex - 1, 0) //movie index should never be negative
     showMovies(initialMovies, movie_cards)
+    console.log('prevButton')
 })
-
-
-nextButton.addEventListener('click', () => {
-    const totalMovies = initialMovies.length;
-    movieIndex = (movieIndex + 1) % totalMovies;
-    const endIndex = (movieIndex + 5) % totalMovies;
-    const visibleMovies = initialMovies.slice(movieIndex, endIndex);
-    showMovies(visibleMovies, movie_cards);
+nextSeriesButton.addEventListener('click', () => {
+    const totalSeries = initialSeries.length;
+    seriesIndex = (seriesIndex + 1) % totalSeries;
+    const seriesEndIndex = (seriesIndex + 5) % totalSeries;
+    const visibleSeries = initialSeries.slice(seriesIndex, seriesEndIndex);
+    showSeries(visibleSeries, movie_cards_series);
+   
+ console.log('clicked next')
 });
+nextButton.addEventListener('click', () => {
+    movieIndex = Math.min(movieIndex + 1, initialMovies.length - 1) 
+    showMovies(initialMovies, movie_cards);
+});
+
 
 
 //get trending movies with initial 5 movies only
 trendingMovies(trendingUrl)
 
-// // Add a click event listener to the "View All" link
-// viewAllLink.addEventListener('click', () => {
-//     if (initialMovies.length > 0) {
-//     // Call the trendingMovies function again to fetch and display all the trending movies
-
-//     } else {
-//         // Show the initial 5 movies again
-//         showMovies(initialMovies, movie_cards);
-//    }
-// });
-
+//apply backgroundImage
+function applyBackgroundImage(imageUrl, title, releaseDate, overview) {
+    const backgroundElement = document.querySelector('.background_image');
+    backgroundElement.style.backgroundImage = `url(${imageUrl})`;
+    backgroundElement.style.backgroundSize = 'cover';
+    backgroundElement.style.backgroundPosition = 'center';
+    backgroundElement.style.backgroundRepeat = 'no-repeat';
+    const backgroundContent = document.createElement('div');
+    backgroundContent.classList.add('background_content');
+    backgroundContent.innerHTML = `
+      <h1>${title}</h1>
+      <p>${releaseDate}</p>
+      <div class="play_buttons">
+      <button class="play_button"><i class="fas fa-play"></i>Play</button>
+      <button class="plus_button"><i class="fas fa-plus"></i></button>
+    </div>
+      <p>${overview}</p>
+    `;
+  
+    backgroundElement.appendChild(backgroundContent);
+  
+}
 
 async function trendingMovies(url) {
     const response = await fetch(url);
     const jsonData = await response.json();
     initialMovies = jsonData.results;
     console.log(initialMovies)
-    // if (limit) {
-    //     movies = movies.slice(0, limit); //keep only the first 5 movies
-    //     initialMovies = [...movies];
-    // } 
-    
+    if (initialMovies.length > 0){
+        const firstMovie = initialMovies[0];
+        const backgroundImageURL = imgURL + firstMovie.poster_path;
+        const title = firstMovie.title;
+        const releaseDate = firstMovie.release_date;
+        const overview = firstMovie.overview;
+        applyBackgroundImage(backgroundImageURL, title, releaseDate, overview);
+    }
 
-    showMovies(initialMovies, movie_cards);
+
+    showMovies(initialMovies, movie_cards, movieIndex);
 
    
 }
@@ -77,7 +107,7 @@ const showMovies = (movies, container) => {
         const { title, poster_path, vote_average, runtime, genre_ids } = movie;
         const card = document.createElement('div')
         card.classList.add('movie_card');
-         card.style.transform = `translateX(${(i - movieIndex) * 1}rem)`;
+         card.style.transform = `translateX(${(i - movieIndex) * 2}rem)`;
         card.innerHTML = `
         <img src="${imgURL + poster_path}" alt="${title}"/>  
          `
@@ -89,17 +119,17 @@ const showMovies = (movies, container) => {
             document.getElementById('modal-runtime').textContent = runtime;
             document.getElementById('modal-genre').textContent = genre_ids;
 
-            //show the modal
+            // //show the modal
             const modal = document.getElementById('modal');
             modal.style.display = 'block';
         })
-
         container.appendChild(card);
 
-    })
-    const containerWidth = movies.length * 17; 
-    container.style.width = `${containerWidth}rem`;
-};
+        })
+
+
+    }
+  
 //close the modal when open
 document.addEventListener('click', (event) => {
     if (event.target.classList.contains('close')) {
@@ -114,16 +144,16 @@ viewAllSeries.addEventListener('click', () => {
     series(seriesUrl)
 });
 //get series 
-series(seriesUrl, 3)
-async function series(url, limit = null) {
+series(seriesUrl)
+async function series(url) {
     const response = await fetch(url);
     const jsonData = await response.json();
-    let seriesData = jsonData.results;
-    console.log(seriesData)
+    initialSeries = jsonData.results;
+    console.log(initialSeries)
     // if (limit) {
     //     seriesData = seriesData.slice(0, limit);
     // }
-    showSeries(seriesData, movie_cards_series);
+    showSeries(initialSeries, movie_cards_series);
 }
 
 
@@ -131,19 +161,20 @@ async function series(url, limit = null) {
 
 const showSeries = (series, container) => {
     container.innerHTML = '';
-    series.forEach((item) => {
+    series.forEach((item, i) => {
         const { original_name, poster_path, vote_average, overview, first_air_date } = item;
         const card = document.createElement('div')
         card.innerHTML = `
         <img src="${imgURL + poster_path}" alt="${original_name}"/>  
          `;
         card.classList.add('movie_card_series');
+        card.style.transform = `translateX(${(i - seriesIndex) * 1}rem)`;
 
         const cardDetails = document.createElement('div');
         cardDetails.classList.add('card_details');
         //limit the overview to a maximum of limited words
         const words = overview.split(' ');
-        const limitedWords = words.slice(0, 20).join(' ');
+        const limitedWords = words.slice(0, 10).join(' ');
         cardDetails.innerHTML = ` 
             <p class="card_titile">${original_name}<span>${first_air_date}</span></p>
             <p class="card_space">25.26 EP<span></span>3.86 GB</p>
@@ -153,72 +184,89 @@ const showSeries = (series, container) => {
               <p class="paly_plus_icon"><i class="fa fa-arrow-down"></i> </p>
             </div>
         `
-       
+
         card.appendChild(cardDetails)
         container.appendChild(card);
+     
 
     })
+    
 };
 
-// form.addEventListener('submit', (e) => {
-//     e.preventDefault();
-//     const searchData = search.value;
-//     if (searchData && searchData !== '') {
-//         getMovies(apiURL + searchData);
-//         search.value = ''; // Reset the search input field
-//     } else {
-//         window.location.reload();
-//     }
-// });
+//search movies
+form.addEventListener('submit', async (e) =>{
+    e.preventDefault();
+    const searchTitle = search.value;
+    if(searchTitle) {
+        const searchURL = searchAPI + '&query=' + searchTitle;
+        const response = await fetch(searchURL);
+        const jsonData = await response.json();
+        const searchResults = jsonData.results;
+        showMovies(searchResults, movie_cards);
+        search.value = '';
+    }
+});
 
-// // const apiURL = 'https://api.themoviedb.org/3/search/movie?api_key=2969cb5dab804fa038e6147c4bca25d4&query=';
-// const imgURL = "https://image.tmdb.org/t/p/w1280/";
+//  event listener to  sort icon
+const sortIcon = document.querySelector('.sort i');
+const sortOptions = document.querySelector('.sort-options');
 
-// const search = document.getElementById('search');
-// const form = document.getElementById('form');
-// const main = document.getElementById('main');
+sortIcon.addEventListener('click', () => {
+    isSortOptionsVisible = !isSortOptionsVisible;
+    sortOptions.style.display = isSortOptionsVisible ? 'block' : 'none';
+  });
 
-// // Get movies
-// form.addEventListener('submit', (e) => {
-//     e.preventDefault();
-//     const searchData = search.value;
-//     if (searchData && searchData !== '') {
-//         const searchURL = apiURL + searchData;
-//         getMovies(searchURL);
-//         search.value = ''; // Reset the search input field
-//     } else {
-//         window.location.reload();
-//     }
-// });
+//event listener to the sort options
+const sortReleaseDateButton = document.getElementById('sort-release-date');
+sortReleaseDateButton.addEventListener('click', () => {
+  sortMoviesByReleaseDate();
+  sortSeriesByReleaseDate();
+});
 
-// async function getMovies(url) {
-//     const response = await fetch(url);
-//     const jsonData = await response.json();
-//     console.log(jsonData);
-//     showMovies(jsonData.results);
-// }
+const sortPopularityButton = document.getElementById('sort-popularity');
+sortPopularityButton.addEventListener('click', () => {
+  sortMoviesByPopularity();
+  sortSeriesByPopularity();
+});
 
-// const showMovies = (movies) => {
-//     main.innerHTML = '';
-//     movies.forEach((movie) => {
-//         createMovieElement(movie);
-//     });
-// };
+// Function to sort the movies by release date
+function sortMoviesByReleaseDate() {
+    initialMovies.sort((a, b) => {
+      const dateA = new Date(a.release_date);
+      const dateB = new Date(b.release_date);
+      return dateA - dateB;
+    });
+  
+    showMovies(initialMovies, movie_cards);
+  }
+  //sort by popularity
+  function sortMoviesByPopularity() {
+    initialMovies.sort((a, b) => b.popularity - a.popularity);
+  
+    showMovies(initialMovies, movie_cards);
+  }
+  
+  //function to sort series
+  function sortSeriesByReleaseDate() {
+    initialSeries.sort((a, b) => {
+      const dateA = new Date(a.first_air_date);
+      const dateB = new Date(b.first_air_date);
+      return dateA - dateB;
+    });
+  
+    showSeries(initialSeries, movie_cards_series);
+  }
+  //sort by popularity
+  function sortSeriesByPopularity() {
+    initialSeries.sort((a, b) => b.popularity - a.popularity);
+  
+    showSeries(initialSeries, movie_cards_series);
+  }
 
-// function createMovieElement(movie) {
-//     const { title, vote_average, poster_path, overview } = movie;
-//     const movieDiv = document.createElement('div');
-//     movieDiv.classList.add('movie');
-//     movieDiv.innerHTML = `
-//         <img src="${imgURL}${poster_path}" alt="${title}" />
-//         <div class='movie-info'>
-//             <h3>${title}</h3>
-//             <span class=''>${vote_average}</span>
-//         </div>
-//         <div class='overview'>
-//             <h3>Overview</h3>
-//             ${overview}
-//         </div>
-//     `;
-//     main.appendChild(movieDiv);
-// }
+  // Toggle the collapsed class on menu toggle click
+const menuToggle = document.querySelector('.menu_toggle');
+const navbarSection = document.querySelector('.navbar_section');
+
+menuToggle.addEventListener('click', () => {
+  navbarSection.classList.toggle('collapsed');
+});

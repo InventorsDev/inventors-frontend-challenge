@@ -17,7 +17,6 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  background-color: rgba(44, 43, 43, 0.973);
 }
 
 html {
@@ -66,6 +65,12 @@ html::-webkit-scrollbar-thumb {
   color: white;
  padding: 0.5rem 1rem;
  cursor: pointer;
+ display: flex;
+ gap: 1rem;
+ align-items: center;
+}
+.navbar_section .logo img{
+  background: none;
 }
 
 .navbar_section ul {
@@ -121,8 +126,12 @@ html::-webkit-scrollbar-thumb {
 
 .search_profile img {
   border-radius: 50%;
-  width: 2rem;
-  height: 2rem;
+  width: 0.7rem;
+  margin-right: 0.3rem;
+  align-items: center;
+}
+.search_profile .human_image{
+  width:2rem;
 }
 
 /* Hero secion */
@@ -130,35 +139,6 @@ html::-webkit-scrollbar-thumb {
 .hero_section .right_hero {
   margin-top: 10rem;
   width: 50%;
-}
-
-.hero_play_div {
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  gap: 1.5rem;
-  margin: 1rem 0;
-}
-
-.hero_play {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.9rem;
-  font-weight: bold;
-  color: black;
-  background-color: white;
-  border-radius: 50px;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-}
-
-.hero_play_div .paly_plus_icon {
-  border-radius: 50%;
-  background-color: white;
-  width: 2rem;
-  padding: 0.5rem;
-  cursor: pointer;
 }
 
 .hero_section .right_hero .hero_text {  
@@ -174,6 +154,7 @@ html::-webkit-scrollbar-thumb {
 
 .trending_section {
   margin-bottom: 5rem;
+  margin-left: 2rem;
 }
 
 .trending_section .trending_top {
@@ -211,6 +192,15 @@ html::-webkit-scrollbar-thumb {
 
 .trending_section .trending_top div .next_icons .left_nextIcon,
 .trending_section .trending_top div .next_icons .right_nextIcon {
+ 
+  font-weight: 200;
+  border: 1px solid white;
+  border-radius: 50%;
+  padding: 0.3rem 0.5rem;
+  cursor: pointer;
+}
+.trending_section .trending_top div .next_icons .prev_Icon,
+.trending_section .trending_top div .next_icons .next_Icon {
  
   font-weight: 200;
   border: 1px solid white;
@@ -274,8 +264,13 @@ scroll-behavior:smooth;
 
 .movie_cards_series {
   display: flex;
+  flex-direction:row;
 gap: 1.3rem;
-flex-flow:row wrap;
+overflow-x: auto;
+scroll-behavior:smooth;
+justify-content: start;
+  overflow: hidden;
+  
 }
 
 .movie_card_series {
@@ -284,18 +279,19 @@ flex-flow:row wrap;
   align-items: center;
   justify-content: start;
   gap: 1rem;
-  width: 27rem;
+  width: 18.5rem;
+  height:16rem;
   border-radius: 20px;
   background-color: rosybrown;
   padding: 1rem;
-  overflow: hidden;
 }
 
 
 .movie_card_series img {
-  width: 13rem;
-  height: auto;
+  width: 7rem;
   border-radius:10px;
+  top: 2rem;
+  bottom: 2rem;
 }
 
 .movie_card_series .card_details {
@@ -332,29 +328,109 @@ flex-flow:row wrap;
   background-color: transparent;
 }
 
-/* modal stylings */
 .modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  color:white;
+  border-radius: 10px;;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  max-width: 600px;
+}
+
+.close {
+  float: right;
+  cursor: pointer;
+  color:red;
+  font-size: 2rem;
+}
+
+.background_image{
+  position: relative;
+}
+
+.background_content {
+  position: absolute;
+  top: 30%;
+  left: 3%;
+  transform: translate(0, -50%);
+  text-align: left;
+  width: 30%;
+  color: #FFF;
+}
+
+.play_buttons{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 1rem 0;
+}
+.play_button{
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: black;
+  background-color: white;
+  border-radius: 50px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.plus_button{
+  border-radius: 50%;
+  background-color: white;
+  width: 2rem;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+.collapsed{
+  display: flex;
+}
+/* media queries */
+@media (max-width: 1268px) {
+  .navbar_links {
     display: none;
-    position: fixed;
-    z-index: 999;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.5);
   }
   
-  .modal-content {
-    background-color: #fefefe;
-    margin: 10% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    max-width: 600px;
-  }
-  
-  .close {
-    float: right;
+  .menu_toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 30px;
+    height: 20px;
     cursor: pointer;
   }
   
+  .menu_toggle .bar {
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+  }
+  
+  .collapsed {
+    display: none;
+  }
+  
+  .navbar_section.collapsed .navbar_links {
+    display: flex;
+  }
+  
+  .navbar_section.collapsed .search_profile {
+    display: flex;
+  }
+}
