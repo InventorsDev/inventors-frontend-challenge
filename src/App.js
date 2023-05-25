@@ -44,6 +44,10 @@ const handleForwardClick = () => {
   setPage(page += 1)
 }
 
+const handleMovieClick = (index) => {
+  setI(index);
+};
+
 return (
     <div className="landingPage"
         style={
@@ -69,8 +73,11 @@ return (
           <Movies 
             data={data} 
             i={i}
+
+            onMovieClick={handleMovieClick}
           />
     </div>
  )
 }
 export default App;
+

@@ -29,7 +29,7 @@ function Nav () {
              </div>
 
              <div className='user-contain'>
-              <img src={user} className='user' alt=''/>
+              <img src={user} className='user' alt='' />
              </div>
             </div>
             

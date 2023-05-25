@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 import './Body.css';
 import pause from '../../Assets/Images/Pause.svg';
-import play from '../../Assets/Images/Play.svg'
+// import play from '../../Assets/Images/Play.svg'
 import plus from '../../Assets/Images/Plus.svg'
 import mark from '../../Assets/Images/Mark.svg'
 import left_arrow from '../../Assets/Images/LeftArrow.svg'
