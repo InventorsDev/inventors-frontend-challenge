@@ -8,7 +8,6 @@ function Movies (props) {
   let {data, onMovieClick} = props;
   
   return (
-    <>
     <div className="moviesc">
         <div className="allMovies">
           <div className="movies">
@@ -39,25 +38,7 @@ function Movies (props) {
           }
 
           </div>
-          </div>
-          </div>
-        </div>
-    </div>
-
-
-<div className="moviesc">
-        <div className="allMovies">
-          <div className="movies">
-             <div className='topman'>
-              <p className='trend'>Binge-worthy series</p>
-              <span className='right'>
-                <span className='view'>View all</span><span className='nbsp'>&nbsp;&nbsp; |&nbsp;&nbsp;</span>
-                <button className='scrollButtons'><img src={left_arrow} alt='scrollers'/></button>&nbsp;&nbsp;&nbsp;
-                <button className='scrollButtons'><img src={right_arrow} alt='scrollers'/></button>
-              </span>
-            </div>
-          <div className='movie'>  
-          <div className='movie-container'>
+          <div className='binge'>
            {data.results.map(
              (movies, index) =>(
              <span key={index} style=
@@ -79,7 +60,6 @@ function Movies (props) {
           </div>
         </div>
     </div>
-    </>
   )
   
 }

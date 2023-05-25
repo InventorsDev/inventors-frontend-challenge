@@ -59,7 +59,7 @@
   }
   
   .movie::-webkit-scrollbar {
-    height: 0px; 
+    height: 2px; 
   }
   
   .movie::-webkit-scrollbar-track {

@@ -48,7 +48,7 @@ const handleMovieClick = (index) => {
   setI(index);
 };
 
-return (
+  return (
     <div className="landingPage"
         style={
           {
