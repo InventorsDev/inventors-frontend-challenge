@@ -2,7 +2,8 @@ import './Movie.css'
 import left_arrow from '../../Assets/Images/LeftArrow.svg'
 import right_arrow from '../../Assets/Images/RightArrow.svg'
 import plus from '../../Assets/Images/Plus.svg'
-import mark from '../../Assets/Images/Mark.svg'
+import pause from '../../Assets/Images/Pause.svg'
+import check from '../../Assets/Images/Check.svg'
 
 function Movies (props) {
   let {data, onMovieClick} = props;
@@ -74,9 +75,10 @@ function Movies (props) {
                              </div> 
                              <div className='text-container'> 
                              <div className='text-box'>
-                               <p>{movies.title} || <span>{movies.release_date}</span></p>
+                               <p className='mtitle'>{movies.title} || {movies.release_date}</p>
                                <p className='overs'>{movies.overview}</p>
-                               <button></button>
+                               <button className='b-button'><img src={pause} alt='' /> Play</button>
+                               <button className='check'><img src={check} alt ='' /></button>
                              </div>
                              </div>
                              </div>
