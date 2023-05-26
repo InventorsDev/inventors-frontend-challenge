@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+@import url('https://fonts.cdnfonts.com/css/satoshi');
+
+                
+.navSection{
+    position: relative;
+    padding: 20px;
+    height: 50px;
+}
+
+.header{
+    position: relative;
+    margin-left: 10%;
+    width: 80%;
+    height: 40px;
+}
+
+.logoname{
+    display: inline !important;
+    position: absolute;
+    left: 20px;
+    width: fit-content;
+}
+.logo{
+    width: 36px !important;
+    height: 36px !important;
+}
+
+.inventors{
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    color: #FFFFFF;
+    vertical-align: top;
+    padding: 5px 0px 0px 0px;
+}
+
+.link-contain{
+    display: inline-block;
+    position: absolute;
+    width: 40%;
+    color: #ffffff75;
+    left: 30%;
+    top: 8px;
+    font-weight: 50;
+    font-family: 'Satoshi', sans-serif;
+}
+
+.links {
+    padding: 0px 20px 0px 20px;
+}
+
+.links:nth-child(1) {
+    color:#FFFFFF;
+}
+
+
+.searchuser{
+    position: absolute;
+    right: 20px;
+    top: 10px;
+}
+.searcher{
+    display: inline;
+    padding: 10px 15px 10px 10px;
+    border-radius: 28px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.search{
+    background-color: inherit;
+    border: none;
+    background: none;
+}
+
+.search:nth-child(2) {
+    vertical-align: calc(2px);
+    width: 75px;
+}
+
+.user-contain{
+    display: inline;
+}
+.user{
+    position: absolute;
+    margin-left: 10px;
+    top: -10px;
+    width: 36px;
+    height: 36px;
+}

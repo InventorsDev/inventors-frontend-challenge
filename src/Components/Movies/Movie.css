@@ -1,0 +1,191 @@
+@import url('https://fonts.cdnfonts.com/css/satoshi');
+ .moviesc{
+    position: relative;
+    padding: 20px;
+    scroll-behavior: smooth;
+ }
+
+ .allMovies{
+    position: relative;
+    margin-left: 10%;
+    width: 80%;
+}
+
+.movies{
+   display: block;
+   color: #ffffff;
+}
+
+.topman{
+    display: block;
+    position: relative;
+    height: 80px;
+}
+
+.trend{
+    position: absolute;
+    left: 0px;
+}
+
+.right{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    height: 40px;
+}
+
+.view{
+    color: #FFA900;
+    font-family: 'Satoshi', sans-serif;
+    text-decoration: underline;
+}
+
+.nbsp{
+    font-size: 2em;
+    font-weight: 50;
+}
+.scrollButtons{
+    background-color: transparent;
+    height: 36px;
+    width: 36px;
+    border-radius: 18px;
+    border: solid 1px white;
+}
+.movie {
+    overflow-x: scroll;
+    height: 200px;
+    display: flex;
+    flex-wrap: nowrap;
+  }
+  
+  .movie::-webkit-scrollbar, .binges::-webkit-scrollbar {
+    height: 0px;
+  }
+  
+  .movie::-webkit-scrollbar-track, .binges::-webkit-scrollbar-track{
+    background-color: #ffffff;
+    border-radius: 2px; 
+  }
+  
+  .movie::-webkit-scrollbar-thumb, .binges::-webkit-scrollbar-thumb{
+    background-color: #ffa900; 
+    border-radius: 2px; 
+  }
+
+.movie-container{
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 10px;
+}
+
+
+
+.post{
+    width: 150px;
+    height: 180px;
+    border-radius: 30px; 
+    margin: 5px 40px 5px 0px;  
+    position: relative;
+    display: flexbox;
+    overflow: hidden;
+    background-size: 100% 100%;
+}
+
+.buttn{
+    z-index: 20000;
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+    top: 10px;
+    right: 10px;
+    border: none;
+    cursor: pointer;
+    background-color: #ffffff75;
+}
+
+.binge-container {
+    display: flex;
+    overflow-x: auto;
+    height: 220px;
+  }
+  
+  .bigger-box {
+    display: flex;
+    flex-direction: row;
+    margin-right: 10px;
+    background-color: #ffffff35;
+    padding: 20px;
+    border-radius: 40px;
+  }
+  
+  .image-box {
+    width: 150px;
+    height: 180px;
+  }
+  
+  .binge {
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    object-fit: 100% 100%;
+  }
+
+  .binge-container::-webkit-scrollbar{
+    height: 0px;
+  }
+
+  .text-container {
+    flex: 1;
+    overflow: auto;
+  }
+
+  .text-container::-webkit-scrollbar{
+    width:0px;
+  }
+
+  .text-box {
+    position: relative;
+    margin-left: 10px;
+    width: 200px;
+    flex: 1;
+  }
+
+  .mtitle{
+    white-space: nowrap ;
+      overflow-x: scroll;
+      font-size: 15px;
+  }
+
+  .mtitle::-webkit-scrollbar {
+    height: 0px;
+  }
+
+  .overs{
+    height: 80px;
+    font-size: 12px;
+    overflow-y: hidden;
+  }
+
+  .overs::-webkit-scrollbar{
+    width: 0px;
+  }
+  
+  .b-button{
+    height: 30px;
+    width: 100px;
+    border: none;
+    border-radius: 28px;
+  }
+
+  .check{
+    position: absolute;
+    margin-left: 10px;
+    padding-top: 10px;
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 15px;
+    background-color: #1eff00;
+  }
+  
