@@ -1,20 +1,22 @@
 body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     padding: 0px;
     margin: 0px;
     outline: none;
-    background-color: black;
+    background-color: rgba(19, 1, 1, 0.938);
 }
-
+/* ---------------------------header------------------------------- */
 header {
     background-image: url(./asset/img/section_img.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    height: 90vh;
 }
 
 .logo-links {
     position: relative;
-    height: 65vh;
+    height: auto;
     width: 100%;
     padding: 20px 0;
     display: flex;
@@ -80,15 +82,14 @@ form .profile-photo {
 
 .hero {
     position: relative;
-    bottom: 300px;
-    padding: 30px;
+    bottom: 10px;
+    padding: 30px ;
     width: 300px;
 
 }
 
 .hero {
     color: white;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .design {
@@ -115,7 +116,7 @@ form .profile-photo {
 }
 
 .hero button:hover {
-    background-color: grey;
+    background-color: rgb(46, 2, 2);
 }
 
 .hero button {
@@ -136,10 +137,9 @@ form .profile-photo {
     font-size: 10px;
     margin-top: 15px;
 }
-
+/* ------------------body---------------------------- */
 main {
-    position: relative;
-    bottom: 100px;
+
     color: white;
     bottom: 250px;
 }
@@ -147,11 +147,12 @@ main {
 .cards {
     display: flex;
     padding: 20px;
+    margin-bottom: 12px;
 }
 
 .cards img {
-    width: 150px;
-    height: 300;
+    width: 140px;
+    height: 250;
     border-radius: 10px;
     margin-left: 8px;
 }
@@ -164,6 +165,7 @@ main {
 
 .type {
     font-size: 20px;
+    text-decoration: underline;
     padding-left: 30px;
 }
 
@@ -201,4 +203,44 @@ main {
     padding: 5px 10px;
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 50%;
+}
+/*-----------------------footer-----------------------*/
+.foot{
+    padding: 50px 15% 10px;
+    border-top: 6px solid #333;
+    color: #777;
+}
+.row{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 50px 0;
+}
+.foot h2{
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+.foot .col{
+    flex-basis: 25%;
+    flex-grow: 1;
+    margin-bottom: 20px;
+}
+.foot .col a{
+    display: block;
+    text-decoration: none;
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+.foot .row{
+    align-items: flex-start;
+    padding: 10px 0;
+}
+.copyright-txt{
+    font-size: 14px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: 600;
 }
