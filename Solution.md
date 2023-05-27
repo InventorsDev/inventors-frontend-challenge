@@ -1,2 +1,4 @@
-https://github.com/willywest44/React-app for the  repository
-http://willywest44.github.io/React-app/ for the pages
+FULLNAME:Adesoji Williams Olamide       
+Email:olamidewilliams2001@gmail.com        
+link for assignment solution to the repository https://github.com/willywest44/React-app          
+For the Output of the project wsolution livehttp://willywest44.github.io/React-app/ 
