@@ -1,0 +1,79 @@
+.body{
+   position: relative;
+   padding: 20px;
+   height: fit-content;
+}
+
+.allprops{
+    display: block;
+    position: relative;
+    margin-left: 10%;
+    height: fit-content;
+    width: 80%;
+}
+
+.buttons{
+    display: block;
+}
+.pageButtons{
+    display: inline;
+    border: none;
+    background-color: transparent;
+}
+
+.page{
+    color: #ffffff;
+    font-size: 20px;
+    padding: 0px 20px 0px 20px;
+}
+
+.props{
+    display: block;
+    width: 40%;
+}
+
+.heading{
+    color: #ffffff;
+}
+
+.year{
+    color: #ffffff;
+    font-weight: 50;
+}
+
+.enclose{
+    position: relative;
+    padding: 20px 0px 20px 0px;
+}
+
+.button{
+    display: inline;
+    width: 120px;
+    height: 50px;
+    border:  none;
+    border-radius: 28px;
+}
+
+.pause{
+    position: absolute;
+    left: 18px;
+}
+
+.tick{
+    display: inline;
+    text-align: center;
+    margin-left: 10px;
+    border: none;
+    position: absolute;
+    height: 48px;
+    width: 48px;
+    border-radius: 24px;
+    background-color: #00000025;
+}
+
+.overview{
+    color: #ffffff;
+    font-weight: 50;
+}
+
+
